@@ -87,6 +87,20 @@ public class CentroFP {
         return sb.toString();
     }
 
+    /**
+     * Metodo que cuenta los alumnos inscritos
+     * @return el numero de alumnos inscritos
+     */
+    public int contarAlumnos(){
+        int contador = 0;
+
+        for(int i=0; i < MAX_ALUMNOS; i++){
+            if(alumnos[i] != null){
+                contador++;
+            }
+        }
+        return contador;
+    }
 
 
 
