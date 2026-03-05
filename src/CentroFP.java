@@ -81,7 +81,6 @@ public class CentroFP {
         for(int i=0; i < MAX_ALUMNOS; i++){
             if(alumnos[i] != null){
                 sb.append(alumnos[i].toString());
-                sb.append("\n");
             }
         }
         return sb.toString();

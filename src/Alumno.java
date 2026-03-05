@@ -55,11 +55,10 @@ public class Alumno {
     public String toString() {
         StringBuilder sb = new StringBuilder("Alumno { ");
         sb.append(String.format("Id: %d", id));
-        sb.append(String.format("Nombre: %s", nombre));
-        sb.append(String.format("Titulo: %s", titulo));
-        sb.append(String.format("Edad: %d", edad));
+        sb.append(String.format(", Nombre: %s", nombre));
+        sb.append(String.format(", Titulo: %s", titulo));
+        sb.append(String.format(", Edad: %d", edad));
         sb.append(" }");
-        sb.append("\n");
         return sb.toString();
     }
 
