@@ -11,6 +11,7 @@ public class Main {
 
         System.out.println("Alumno registrado: " + Uax.registrarAlumno(alumno1));
         System.out.println("Alumno registrado: " + Uax.registrarAlumno(alumno2));
+        System.out.println("Alumno registrado: " + Uax.registrarAlumno(alumno3));
         System.out.println("Alumno registrado: " + Uax.registrarAlumno(alumno1));
 
         System.out.println("Alumno buscado: " + Uax.buscarAlumno(1));
