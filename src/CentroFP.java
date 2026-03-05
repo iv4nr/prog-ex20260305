@@ -47,6 +47,25 @@ public class CentroFP {
         return primerHuecoLibre;
     }
 
+    /**
+     * Metodo que registra un alumno
+     * @param alumno alumno recibido
+     * @return true si lo ha podido registrar o false si no ha podido
+     */
+    public boolean registrarAlumno(Alumno alumno) {
+        boolean alumnoEncontrado = true;
+        Alumno alumnoAux = null;
+
+        for (int i = 0; i < MAX_ALUMNOS && alumnoEncontrado; i++) {
+            if (alumnos[i] == null && buscarAlumno(alumno.getId())==alumno ) {
+                alumnos[i] = alumnoAux;
+                alumnoEncontrado = false;
+            }
+        }
+        return alumnoEncontrado;
+    }
+
+
 
 
 
