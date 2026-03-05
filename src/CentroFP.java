@@ -2,8 +2,10 @@ public class CentroFP {
     private Alumno[] alumnos;
     private final int MAX_ALUMNOS;
 
+
     /**
      * Metodo constructor de CentroFP
+     *
      * @param maximos_alumnos cantidad maxima de alumnos
      */
     public CentroFP(int maximos_alumnos) {
@@ -14,16 +16,17 @@ public class CentroFP {
 
     /**
      * Metodo que busca un alumno por id
+     *
      * @param id id del alumno
      * @return el alumno o null
      */
-    public Alumno buscarAlumno(int id){
+    public Alumno buscarAlumno(int id) {
         boolean alumnoEncontrado = true;
         Alumno alumno = null;
 
-        for(int i = 0; i < MAX_ALUMNOS && alumnoEncontrado; i++){
-            if(alumnos[i] != null && alumnos[i].getId() == id){
-                alumnos[i] = alumno;
+        for (int i = 0; i < MAX_ALUMNOS && alumnoEncontrado; i++) {
+            if (alumnos[i] != null && alumnos[i].getId() == id) {
+                alumno = alumnos[i];
                 alumnoEncontrado = false;
             }
         }
@@ -32,14 +35,15 @@ public class CentroFP {
 
     /**
      * Metodo que busca la primera poscion libre entre los alumnos
+     *
      * @return la primera posicion libre
      */
-    public int buscarPrimerHuecoLibre(){
+    public int buscarPrimerHuecoLibre() {
         boolean seguirBuscando = true;
         int primerHuecoLibre = -1;
 
-        for(int i = 0; i < MAX_ALUMNOS && seguirBuscando; i++){
-            if(alumnos[i] == null){
+        for (int i = 0; i < MAX_ALUMNOS && seguirBuscando; i++) {
+            if (alumnos[i] == null) {
                 primerHuecoLibre = i;
                 seguirBuscando = false;
             }
@@ -49,26 +53,27 @@ public class CentroFP {
 
     /**
      * Metodo que registra un alumno
+     *
      * @param alumno alumno recibido
      * @return true si lo ha podido registrar o false si no ha podido
      */
     public boolean registrarAlumno(Alumno alumno) {
-        boolean alumnoEncontrado = true;
-        Alumno alumnoAux = null;
+        boolean alumnoEncontrado = false;
+        int poscionAlumno;
 
-        for (int i = 0; i < MAX_ALUMNOS && alumnoEncontrado; i++) {
-            if (alumnos[i] == null && buscarAlumno(alumno.getId())==alumno ) {
-                alumnos[i] = alumnoAux;
-                alumnoEncontrado = false;
+        if (buscarAlumno(alumno.getId()) == null) {
+            poscionAlumno = buscarPrimerHuecoLibre();
+            if (poscionAlumno >= 0) {
+                alumnos[poscionAlumno] = alumno;
+                alumnoEncontrado = true;
             }
         }
         return alumnoEncontrado;
+
     }
 
-
-
-
-
-
 }
+
+
+
 
